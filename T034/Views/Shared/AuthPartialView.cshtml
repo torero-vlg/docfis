@@ -1,0 +1,12 @@
+﻿@model T034.Models.UserModel
+
+@{
+    if (Model.IsAutharization)
+    {
+        @Model.Name 
+
+        @Html.ActionLink("Выйти", "Logout", "Auth")
+
+    }
+}
+

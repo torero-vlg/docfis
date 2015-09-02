@@ -1,0 +1,44 @@
+﻿@using T034.Models
+@using T034.Tools.Auth
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta content="музей, архив, волгоградский государственный институт искусств и культуры, виртуальный музей, Волгоградское областное культурно-просветительное училище, вгиик" name="description">
+    <meta content="музей-архив, архиввгиик, архив, музей, вгиик, волгоградский государственный институт искусств и культуры" name="keywords">
+
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap-theme.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap-responsive.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/DataTables-1.10.2/media/css/jquery.dataTables.min.css")" rel="stylesheet" type="text/css" />
+
+    <script src="@Url.Content("~/Scripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.9.0.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/DataTables-1.10.2/media/js/jquery.dataTables.min.js")" type="text/javascript"></script>
+</head>
+
+    <body>
+        
+        @{
+            var userModel = YandexAuth.GetUser(Request);
+        }
+        @Html.Partial("AuthPartialView", userModel)
+        
+        <div class="container">
+            <div><a href="http://архиввгиик.рф"><img src="@Url.Content("~/Content/pic/banner.png")" alt="Баннер" height="198px" width="900px"></a></div>
+            <!--Begin MainMenu-->
+            @Html.Partial("MainMenu")
+            <!--End MainMenu-->
+            <div class="main">
+                <div><img src="@Url.Content("~/Content/pic/pmb.png")" alt="" height="26px" width="900px"></div>
+                <!--Begin Body-->
+                @RenderBody()
+                <!--End Body-->
+                <div class="bbanner" id="right"><a href="http://архиввгиик.рф" class="bottommenu">&copy; Волгоградский государственный институт искусств и культуры 2014-2015</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<T034.ViewModel.Common.NodeViewModel>
+
+@{
+    ViewBag.Title = "Публикации";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.ActionLink("Добавить", "AddOrEdit", "Node")
+@{
+    foreach (var news in Model)
+    {
+        <p>@Html.Display(news.Path)</p>
+        <p>@Html.Raw(news.Description)</p>
+        <p>@Html.ActionLink("Редактировать", "AddOrEdit", new { id = news.Id })</p>
+        <p>@Html.ActionLink("Подробнее", "Index", new { id = news.Id })</p>
+    }
+}

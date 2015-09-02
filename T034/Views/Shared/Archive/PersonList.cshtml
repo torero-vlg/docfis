@@ -1,0 +1,21 @@
+﻿@model List<Db.Entity.Vgiik.Person>
+           
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+        <h5 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            Архивные документы Волгоградского государственного института искусств и культуры
+        </a>
+        </h5>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+            <div class="list-group">
+                @foreach (var person in Model)
+                {
+                    @Html.ActionLink(person.FullName, "Person", "Archive", new { personId = person.Id }, new { @class = "list-group-item" })    
+                }
+            </div>
+        </div>
+    </div>
+</div>

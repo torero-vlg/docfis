@@ -1,0 +1,33 @@
+﻿@using T034.ViewModel
+@using T034.ViewModel.Common
+@{
+    ViewBag.Title = "Спортивные достижения";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="vitrina"><p>&nbsp;</p></div>
+
+<div class="text">
+    @{
+        var directory = new DirectoryInfo(Server.MapPath("/Content/images/sport/skd/"));
+        var files = directory.GetFiles().Select(f => f.Name);
+        var dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/sport/skd/" + file, Description = "" });
+        
+        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "Студенты факультета социально-культурной деятельности"));
+    }
+</div>
+
+<div class="text">
+    @{
+        directory = new DirectoryInfo(Server.MapPath("/Content/images/sport/gto2015/"));
+        files = directory.GetFiles().Select(f => f.Name);
+        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/sport/gto2015/" + file, Description = "" });
+
+        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "Студенты ВГИИК сдают ГТО 2 ИЮНЯ 2015"));
+    }
+</div>
+<br>
+<div class="text text-center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/adxofnJoGM0" frameborder="0" allowfullscreen></iframe>
+</div>
+

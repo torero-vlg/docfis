@@ -1,0 +1,31 @@
+﻿@model T034.ViewModel.Common.NodeViewModel
+
+@{
+    ViewBag.Title = "Редактирование публикации";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddOrEdit", "Node"))
+{
+    <div class="control-group warning">
+        <label class="control-label">@Html.LabelFor(m => m.Description)</label>
+        <div>
+            @Html.TextBoxFor(m => m.Description, new Dictionary<string, object> { { "class", "input-xxlarge" } })
+            @Html.HiddenFor(m => m.Id)
+        </div>
+        
+        <label class="control-label">@Html.LabelFor(m => m.Path)</label>
+        <div>
+            @Html.TextBoxFor(m => m.Path, new Dictionary<string, object> { { "class", "input-xxlarge" } })
+        </div>
+
+        <label class="control-label">@Html.LabelFor(m => m.NodeTypeId)</label>
+        <div>
+            @Html.DropDownListFor(m => m.NodeTypeId, Model.Types)
+        </div>
+
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+    </div>
+}

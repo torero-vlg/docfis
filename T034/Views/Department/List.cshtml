@@ -1,0 +1,14 @@
+﻿@model IEnumerable<T034.ViewModel.DepartmentViewModel>
+
+@{
+    ViewBag.Title = "Подразделения";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.ActionLink("Добавить", "AddOrEdit", "Department")
+@{
+    foreach (var news in Model)
+    {
+        <p>@news.Name</p>
+        <p>@Html.ActionLink("Редактировать", "AddOrEdit", new { id = news.Id })</p>
+    }
+}

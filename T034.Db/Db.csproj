@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE87A612-15E2-4801-98B5-AA8CC579628A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Db</RootNamespace>
+    <AssemblyName>Db</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.3.3.4.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=3.2.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.3.2.0.0\lib\net35\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractDbFactory.cs" />
+    <Compile Include="DataAccess\IBaseDb.cs" />
+    <Compile Include="DataAccess\NhBaseDb.cs" />
+    <Compile Include="DataAccess\NhBaseMessageDb.cs" />
+    <Compile Include="DataAccess\IBaseMessageDb.cs" />
+    <Compile Include="Entity\Administration\Role.cs" />
+    <Compile Include="Entity\Directory\NodeType.cs" />
+    <Compile Include="Entity\Node.cs" />
+    <Compile Include="Entity\Administration\User.cs" />
+    <Compile Include="Entity\Directory\DirectoryEntity.cs" />
+    <Compile Include="Entity\Entity.cs" />
+    <Compile Include="Entity\Finder\Finder.cs" />
+    <Compile Include="Entity\News.cs" />
+    <Compile Include="Entity\Vgiik\Album.cs" />
+    <Compile Include="Entity\Vgiik\Department.cs" />
+    <Compile Include="Entity\Vgiik\Person.cs" />
+    <Compile Include="Entity\Vgiik\Publication.cs" />
+    <Compile Include="Mapping\Administration\RoleMap.cs" />
+    <Compile Include="Mapping\Administration\UserMap.cs" />
+    <Compile Include="Mapping\NewsMap.cs" />
+    <Compile Include="Mapping\NodeMap.cs" />
+    <Compile Include="Mapping\Vgiik\DepartmentMap.cs" />
+    <Compile Include="Mapping\Vgiik\PersonMap.cs" />
+    <Compile Include="Mapping\Vgiik\AlbumMap.cs" />
+    <Compile Include="Mapping\Vgiik\PublicationMap.cs" />
+    <Compile Include="NhDbFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\MonitorLog.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mapping\Directory\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

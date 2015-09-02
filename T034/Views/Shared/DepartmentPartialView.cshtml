@@ -1,0 +1,26 @@
+﻿@model T034.ViewModel.DepartmentViewModel
+
+@Html.Partial("Department/DepartmentPreview", Model)
+
+<div class="row">
+    <div class="col-xs-6 col-md-12">
+        @{
+            foreach (var carousel in Model.Albums)
+            {
+                Html.RenderPartial("Carousel", carousel);
+            }
+        }
+    </div>
+</div>
+
+@for (var i = 0; i < Model.Files.Count(); i++)
+{
+    <p><a href="@Url.Content("~" + Model.FilesFolder + Model.Files.ToList()[i])" alt="...">@Model.Files.ToList()[i]</a></p>
+}
+
+<div class="text text-center">
+    @for (var i = 0; i < Model.Videos.Count(); i++)
+    {
+        @Html.Raw(@Model.Videos.ToList()[i])
+    }
+</div>

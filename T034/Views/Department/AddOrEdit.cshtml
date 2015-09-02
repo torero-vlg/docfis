@@ -1,0 +1,44 @@
+﻿@model T034.ViewModel.DepartmentViewModel
+
+@{
+    ViewBag.Title = "Редактирование подразделения";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddOrEdit", "Department"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.HiddenFor(m => m.Id)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MainPhoto)
+        @Html.TextBoxFor(m => m.MainPhoto, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.MainPhotoDescription)
+        @Html.TextBoxFor(m => m.MainPhotoDescription, new { @class = "form-control" })
+    </div>
+        
+    <div class="form-group">
+        @Html.LabelFor(m => m.Text)
+        @Html.TextBoxFor(m => m.Text, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Nodes)
+        @Html.TextBoxFor(m => m.Nodes, new { @class = "form-control" })
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.AlbumsIds)
+        @Html.TextBoxFor(m => m.AlbumsIds, new { @class = "form-control" })
+    </div>
+    
+    <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+    </div>
+}

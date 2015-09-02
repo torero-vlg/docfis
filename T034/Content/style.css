@@ -1,0 +1,269 @@
+body
+{
+    font-size: .85em;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+    background: url("pic/back.png") repeat scroll 0 0 #fff;
+}
+
+
+.main
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/wb.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    padding: 0 0 0 0;
+}
+
+.text
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #000000;
+    text-align: justify;
+    background: url("pic/wb.png") repeat scroll 0 0 #fff;
+    padding: 0 20px 0 20px;
+}
+
+.presentation
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/stend.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 478px;
+    padding: 20px 150px 100px 180px;
+}
+
+
+h3
+{
+    font-size: 15px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #701c05 !important;
+    background-color: #ffffff;
+    text-align: center;
+    font-variant: small-caps;
+    font-style: italic;
+    font-weight: bold;
+    background: url("pic/wb.png") repeat scroll 0 0 #fff;
+    padding: 15px;
+}
+
+h4
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    text-align: center;
+    font-variant: small-caps;
+    font-weight: bold;
+    background: url("pic/wb.png") repeat scroll 0 0 #fff;
+}
+
+
+
+/* Styles for bottom menu link
+-----------------------------------------------------------*/
+
+A.bottommenu
+{
+	font-size: 12px;
+        font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+	color: #ffd200;
+	text-decoration: none;
+	font-variant: small-caps;
+	font-style: italic;
+	font-align: right;
+	vertical-align: -25px;
+}
+
+A.bottommenu:hover
+{
+	color: #ffd200;
+	text-decoration: none;
+}
+
+A.a
+{
+	font-size: 12px;
+        font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+	color: #701c05;
+	text-decoration: none;
+}
+
+A.a:hover
+{
+	color: #ffd200;
+	text-decoration: none;
+}
+
+#right 
+{ 
+	text-align: right;
+}
+
+
+.dropdown-menu>li>a
+{
+	background: url("pic/btn.png") repeat scroll 0 0;
+	color: #e9de10 !important;
+}
+
+.dropdown-menu
+{
+	text-decoration: none;
+	background-color:#882002 !important;
+}
+
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+
+
+.bbanner
+{
+    height: 58px;
+    width: 900px;
+    padding-right: 15px;
+    background: url("pic/bbanner.png"); 
+   }
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+fieldset 
+{
+    border:1px solid #ddd;
+    padding:0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend 
+{
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+textarea 
+{
+    min-height: 75px;
+}
+
+.editor-label 
+{
+    margin: 1em 0 0 0;
+}
+
+.editor-field 
+{
+    margin:0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+.shirma
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/shstend.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 700px;
+    padding: 30px 66px 100px 66px;
+}
+
+.books
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    width: 900px;
+    height: 900px;
+    padding: 0px 66px 100px 0px;
+}
+
+.perekid
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/psystem.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 578px;
+    padding: 40px 30px 40px 80px;
+}
+
+.bstand
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/bstand.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 1130px;
+    padding: 60px 135px 240px 140px;
+}
+
+.vitrina
+{
+    font-size: 13px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    color: #000000;
+    background-color: #ffffff;
+    text-align: justify;
+    background: url("pic/vitrina.png") repeat scroll 0 0 #fff;
+    width: 900px;
+    height: 1000px;
+    padding: 0 0 0 0;
+}

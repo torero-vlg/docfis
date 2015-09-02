@@ -1,0 +1,46 @@
+﻿@using T034.ViewModel
+@using T034.ViewModel.Common
+@{
+    ViewBag.Title = "Наша гордость";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text">
+    @{
+        var directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2009/"));
+        var files = directory.GetFiles().Select(f => f.Name);
+        var dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2009/" + file, Description = "" });
+        
+        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2009"));
+    }
+</div>
+
+<div class="text">
+    @{
+        directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2010/"));
+        files = directory.GetFiles().Select(f => f.Name);
+        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2010/" + file, Description = "" });
+        
+        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2010"));
+    }
+</div>
+
+<div class="text">
+    @{
+        directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2011/"));
+        files = directory.GetFiles().Select(f => f.Name);
+        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2011/" + file, Description = "" });
+        
+        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2011"));
+    }
+</div>
+
+<div class="text">
+    @{
+        directory = new DirectoryInfo(Server.MapPath("/Content/images/museum/room5/2012/"));
+        files = directory.GetFiles().Select(f => f.Name);
+        dpi = files.Select(file => new NodeViewModel { Path = "/Content/images/museum/room5/2012/" + file, Description = "" });
+        
+        Html.RenderPartial("Carousel", new CarouselViewModel(dpi, "2012"));
+    }
+</div>

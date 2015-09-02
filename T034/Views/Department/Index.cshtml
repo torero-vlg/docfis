@@ -1,0 +1,9 @@
+﻿@model T034.ViewModel.DepartmentViewModel
+
+@{
+    ViewBag.Title = Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="text">
+    @Html.Partial("DepartmentPartialView", Model)
+</div>

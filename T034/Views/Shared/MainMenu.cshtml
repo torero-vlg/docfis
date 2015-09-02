@@ -1,0 +1,22 @@
+﻿<div class="btn-group" role="group">
+	<div class="btn-group" role="group"><a href="/Home/Presentation"><img src="@Url.Content("~/Content/pic/menu1.png")" alt="" height="47px" width="228px"></a></div>
+	<div class="btn-group" role="group"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><img  src="@Url.Content("~/Content/pic/menu2.png")" alt="" height="47px" width="246px"></a>
+        <ul class="dropdown-menu" role="menu">
+            <li>@Html.ActionLink("Историческая справка о ВГИИК", "Museum", "Home", new { room = 0 }, null)</li>
+            <li>@Html.ActionLink("Ректорат", "Museum", "Home", new { room = 1 }, null)</li>
+            <li>@Html.ActionLink("Они были первыми", "Museum", "Home", new { room = 2 }, null)</li>
+            <li>@Html.ActionLink("Научно-методические достижения", "Museum", "Home", new { room = 3 }, null)</li>
+            <li>@Html.ActionLink("Спортивные достижения", "Museum", "Home", new { room = 4 }, null)</li>
+            <li>@Html.ActionLink("Наша гордость", "Museum", "Home", new { room = 5 }, null)</li>
+            <li>@Html.ActionLink("Мастера и ученики", "Museum", "Home", new { room = 6 }, null)</li>
+            <li>@Html.ActionLink("Благотворительность", "Museum", "Home", new { room = 7 }, null)</li>
+        </ul>
+	</div>
+	<div class="btn-group" role="group"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#"><img src="@Url.Content("~/Content/pic/menu3.png")" alt="" height="47px" width="246px"></a>
+		<ul class="dropdown-menu" role="menu">
+            <li>@Html.ActionLink("Фотографии", "Photo", "Home")</li>
+            <li>@Html.ActionLink("Видео", "Video", "Home")</li>
+		</ul>
+	</div>
+	<div class="btn-group" role="group"><a href="/Home/Archive"><img src="@Url.Content("~/Content/pic/menu4.png")" alt="" height="47px" width="183px"></a></div>
+</div>

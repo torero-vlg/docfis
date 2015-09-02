@@ -1,0 +1,15 @@
+﻿@model List<T034.ViewModel.CarouselViewModel>
+
+@{
+    ViewBag.Title = "ВГИИК - Фотографии";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="text">
+    @{
+        foreach (var carouselViewModel in Model)
+        {
+            Html.RenderPartial("Carousel", carouselViewModel);
+        }
+    }
+    
+</div>
