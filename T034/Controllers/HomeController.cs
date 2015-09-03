@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using Db.Entity.Vgiik;
 using T034.ViewModel;
@@ -93,6 +94,26 @@ namespace T034.Controllers
         public ActionResult Presentation()
         {
             return View();
+        }
+
+        public void UploadNow(HttpPostedFileWrapper upload)
+        {
+            if (upload != null)
+            {
+                var imageName = upload.FileName;
+                var path = System.IO.Path.Combine(Server.MapPath("~/Upload/Images"), imageName);
+                upload.SaveAs(path);
+            }
+        }
+
+        public ActionResult UploadPartial()
+        {
+            var appData = Server.MapPath("~/Upload/Images");
+            var images = Directory.GetFiles(appData).Select(x => new ImageViewModel
+            {
+                Url = Url.Content("/Upload/Images/" + Path.GetFileName(x))
+            });
+            return View(images);
         }
     }
 }

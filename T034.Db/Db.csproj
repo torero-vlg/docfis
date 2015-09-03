@@ -66,6 +66,7 @@
     <Compile Include="Entity\Entity.cs" />
     <Compile Include="Entity\Finder\Finder.cs" />
     <Compile Include="Entity\News.cs" />
+    <Compile Include="Entity\Page.cs" />
     <Compile Include="Entity\Vgiik\Album.cs" />
     <Compile Include="Entity\Vgiik\Department.cs" />
     <Compile Include="Entity\Vgiik\Person.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Mapping\Administration\UserMap.cs" />
     <Compile Include="Mapping\NewsMap.cs" />
     <Compile Include="Mapping\NodeMap.cs" />
+    <Compile Include="Mapping\PageMap.cs" />
     <Compile Include="Mapping\Vgiik\DepartmentMap.cs" />
     <Compile Include="Mapping\Vgiik\PersonMap.cs" />
     <Compile Include="Mapping\Vgiik\AlbumMap.cs" />
