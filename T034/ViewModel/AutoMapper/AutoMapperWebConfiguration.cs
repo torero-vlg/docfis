@@ -10,7 +10,7 @@ namespace T034.ViewModel.AutoMapper
             Mapper.Initialize(cfg =>
             {
                 cfg.AddProfile(new DepartmentProfile(server));
-                cfg.AddProfile(new PageProfile(server));
+                cfg.AddProfile(new PageProfile());
             });
         }
     }

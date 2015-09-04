@@ -60,6 +60,24 @@ namespace T034.Controllers
             var model = new PageViewModel();
 
             var item = Db.Get<Page>(id);
+            if (item == null)
+            {
+                return View("ServerError", (object)"Страница не найдена");
+            }
+            model = Mapper.Map(item, model);
+            
+            return View(model);
+        }
+
+        public ActionResult Preview(int id)
+        {
+            var model = new PageViewModel();
+
+            var item = Db.Get<Page>(id);
+            if (item == null)
+            {
+                return View("ServerError", (object)"Страница не найдена");
+            }
             model = Mapper.Map(item, model);
 
             return View(model);
