@@ -107,7 +107,6 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ArchiveController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
@@ -135,7 +134,6 @@
     <Compile Include="Tools\FileUpload\ViewDataUploadFilesResult.cs" />
     <Compile Include="Tools\HttpTools.cs" />
     <Compile Include="Tools\SerializeTools.cs" />
-    <Compile Include="ViewModel\ArchiveViewModel.cs" />
     <Compile Include="ViewModel\AutoMapper\AutoMapperWebConfiguration.cs" />
     <Compile Include="ViewModel\AutoMapper\DepartmentProfile.cs" />
     <Compile Include="ViewModel\AutoMapper\PageProfile.cs" />
@@ -210,25 +208,19 @@
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload.css" />
     <Content Include="Content\jQuery.FileUpload\img\loading.gif" />
     <Content Include="Content\jQuery.FileUpload\img\progressbar.gif" />
-    <Content Include="Content\pic\back.png" />
     <Content Include="Content\pic\banner.png" />
-    <Content Include="Content\pic\banner_b.png" />
-    <Content Include="Content\pic\bbanner.png" />
-    <Content Include="Content\pic\books.png" />
-    <Content Include="Content\pic\books2.png" />
-    <Content Include="Content\pic\bstand.png" />
-    <Content Include="Content\pic\btn.png" />
+    <Content Include="Content\pic\bl.png" />
+    <Content Include="Content\pic\cl.png" />
+    <Content Include="Content\pic\cvl.png" />
     <Content Include="Content\pic\menu1.png" />
     <Content Include="Content\pic\menu2.png" />
     <Content Include="Content\pic\menu3.png" />
     <Content Include="Content\pic\menu4.png" />
-    <Content Include="Content\pic\pmb.png" />
-    <Content Include="Content\pic\psystem.png" />
-    <Content Include="Content\pic\shstend.png" />
-    <Content Include="Content\pic\stend.png" />
-    <Content Include="Content\pic\VGIIIK.jpg" />
-    <Content Include="Content\pic\vitrina.png" />
-    <Content Include="Content\pic\wb.png" />
+    <Content Include="Content\pic\menu5.png" />
+    <Content Include="Content\pic\menu6.png" />
+    <Content Include="Content\pic\wl.png" />
+    <Content Include="Content\pic\wyl.png" />
+    <Content Include="Content\pic\yandex_icon.png" />
     <Content Include="Content\style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -722,10 +714,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\images\people\" />
-    <Folder Include="Content\images\photo\archive\" />
-    <Folder Include="Content\images\presentation\" />
-    <Folder Include="Content\images\sport\" />
     <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
@@ -754,27 +742,10 @@
     <Content Include="Views\Shared\AuthPartialView.cshtml" />
     <Content Include="Views\Shared\FileUploadPartialView.cshtml" />
     <Content Include="Views\Shared\AdminMenu.cshtml" />
-    <Content Include="Views\Home\Archive.cshtml" />
     <Content Include="Views\Shared\MainMenu.cshtml" />
-    <Content Include="Views\Home\Video.cshtml" />
-    <Content Include="Views\Home\Photo.cshtml" />
-    <Content Include="Views\Home\Presentation.cshtml" />
-    <Content Include="Views\Home\Rooms\Room1.cshtml" />
-    <Content Include="Views\Home\Rooms\Room7.cshtml" />
-    <Content Include="Views\Home\Rooms\Room2.cshtml" />
-    <Content Include="Views\Home\Rooms\Room3.cshtml" />
-    <Content Include="Views\Home\Rooms\Room4.cshtml" />
-    <Content Include="Views\Home\Rooms\Room5.cshtml" />
-    <Content Include="Views\Home\Rooms\Room6.cshtml" />
     <Content Include="Views\Shared\Carousel.cshtml" />
     <Content Include="Views\Shared\DepartmentPartialView.cshtml" />
-    <Content Include="Views\Archive\Person.cshtml" />
     <Content Include="Views\404.cshtml" />
-    <Content Include="Views\Home\Rooms\Room0.cshtml" />
-    <Content Include="Views\Shared\Archive\Person.cshtml" />
-    <Content Include="Views\Shared\Archive\PersonList.cshtml" />
-    <Content Include="Views\Shared\Archive\PhotoList.cshtml" />
-    <Content Include="Views\Shared\Archive\DepartmentList.cshtml" />
     <Content Include="Views\Shared\Museum\Publication.cshtml" />
     <Content Include="Views\Museum\Publication.cshtml" />
     <Content Include="Views\Node\AddOrEdit.cshtml" />

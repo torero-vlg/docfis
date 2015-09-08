@@ -25,20 +25,32 @@
             var userModel = YandexAuth.GetUser(Request);
         }
         @Html.Partial("AuthPartialView", userModel)
-        
-        <div class="container">
-            <div><a href="http://архиввгиик.рф"><img src="@Url.Content("~/Content/pic/banner.png")" alt="Баннер" height="198px" width="900px"></a></div>
-            <!--Begin MainMenu-->
-            @Html.Partial("MainMenu")
-            <!--End MainMenu-->
-            <div class="main">
-                <div><img src="@Url.Content("~/Content/pic/pmb.png")" alt="" height="26px" width="900px"></div>
-                <!--Begin Body-->
-                @RenderBody()
-                <!--End Body-->
-                <div class="bbanner" id="right"><a href="http://архиввгиик.рф" class="bottommenu">&copy; Волгоградский государственный институт искусств и культуры 2014-2015</a>
-                </div>
-            </div>
-        </div>
+        <table cellspacing=0 cellpadding=0 border=0 width="804" align="center">
+            <tr>
+                <td width="2" BACKGROUND="@Url.Content("~/Content/pic/cvl.png")"><img src="@Url.Content("~/Content/pic/cvl.png")"></td>
+                <td></td>
+                <td>
+                    <div>
+                        <div><img src="@Url.Content("~/Content/pic/banner.png")" alt="Баннер" height="205px" width="800px"></div>
+			
+                        <!--Begin MainMenu-->
+                        @Html.Partial("MainMenu")
+                        <!--End MainMenu-->
+			
+                        <div><img src="@Url.Content("~/Content/pic/wyl.png")" alt="" height="8px" width="800px"></div>
+                        <div class="text">
+                            <!--Begin Body-->
+                            @RenderBody()
+                            <!--End Body-->
+                        </div>
+                        <div class="bottommenu"> Новости :: Цели и задачи :: Услуги и цены :: Фотогалерея :: О нас :: Контакты</div>
+                    </div>
+                </td>
+                <td width="2" BACKGROUND="@Url.Content("~/Content/pic/cvl.png")"><img src="@Url.Content("~/Content/pic/cvl.png")" width="2px"></td>
+                <td></td>
+            </tr>
+            <tr><td colspan=3 align="right" height="25"><a href="" class="bmenu">2015 &copy; "Детский оздоровительный центр физической культуры и спорта"</a></td></tr>
+            </table>
+		
     </body>
 </html>
