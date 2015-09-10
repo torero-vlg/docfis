@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Db.Tools;
 using T034.Tools.Auth;
 
 namespace T034.Controllers
@@ -10,7 +11,9 @@ namespace T034.Controllers
         public ActionResult LoginWithYandex(string code)
         {
 //            var userCookie = YandexAuth.GetAuthorizationCookie(Request);
+         //   MonitorLog.WriteLog(string.Format("LoginWithYandex({0})", code), MonitorLog.typelog.Info, true);
             var accessToken = YandexAuth.GetAuthorizationCookie(Response.Cookies, code, Repository);
+          //  MonitorLog.WriteLog(string.Format("accessToken = {0}", accessToken), MonitorLog.typelog.Info, true);
 
             FormsAuthentication.SetAuthCookie(accessToken, true);
             

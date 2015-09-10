@@ -55,7 +55,9 @@ namespace T034
                 var list = new List<ActionRole>
                     {
                         new ActionRole {Action = "AddOrEdit", Controller = "Page", Role = "Администратор"},
-                        new ActionRole {Action = "AddOrEdit", Controller = "Department", Role = "Администратор"}
+                        new ActionRole {Action = "AddOrEdit", Controller = "Department", Role = "Администратор"},
+                        new ActionRole {Action = "AddOrEdit", Controller = "User", Role = "Администратор"},
+                        new ActionRole {Action = "AddOrEdit", Controller = "Role", Role = "Администратор"}
                     };
                 return list;
             }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using T034.Controllers;
 
 namespace T034.Tools.Attribute
 {
@@ -21,9 +22,16 @@ namespace T034.Tools.Attribute
             if (rolesCookie != null && rolesCookie.Value != null && rolesCookie.Value.Contains(role.Role))
                 return;
             
-            //filterContext.Result = new Http403Result();
-            filterContext.RequestContext.HttpContext.Response.StatusCode = 403;
+            filterContext.Result = new Http403Result();
 
+        }
+    }
+
+    public class Http403Result : ActionResult
+    {
+        public override void ExecuteResult(ControllerContext context)
+        {
+            context.HttpContext.Response.StatusCode = 403;
         }
     }
 }
