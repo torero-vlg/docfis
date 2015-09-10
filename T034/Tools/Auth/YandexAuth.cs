@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Linq;
 using System.Web;
 using System.Web.Security;
+using Db.DataAccess;
+using Ninject;
 using T034.Models;
+using T034.Repository;
 
 namespace T034.Tools.Auth
 {
@@ -12,7 +16,9 @@ namespace T034.Tools.Auth
 
         public const string InfoUrl = "https://login.yandex.ru/info";
 
-        public static HttpCookie GetAuthorizationCookie(string code)
+
+
+        public static string GetAuthorizationCookie(HttpCookieCollection cookies, string code, IRepository repository)
         {
             //var code = request.QueryString["code"];
 
@@ -28,7 +34,15 @@ namespace T034.Tools.Auth
             };
 
 
-            return userCookie;
+            stream = HttpTools.PostStream(InfoUrl, string.Format("oauth_token={0}", userCookie.Value));
+            var email = SerializeTools.Deserialize<UserModel>(stream).Name;
+
+            var user = repository.GetUser(email);
+
+            cookies.Set(userCookie);
+            cookies.Add(new HttpCookie("roles", string.Join(",", user.UserRoles.Select(r => r.Name))));
+            return model.access_token;
+
         }
 
         public static UserModel GetUser(HttpRequestBase request)

@@ -5,16 +5,15 @@ using T034.Tools.Auth;
 
 namespace T034.Controllers
 {
-    public class AuthController : Controller
+    public class AuthController : BaseController
     {
         public ActionResult LoginWithYandex(string code)
         {
 //            var userCookie = YandexAuth.GetAuthorizationCookie(Request);
-            var userCookie = YandexAuth.GetAuthorizationCookie(code);
+            var accessToken = YandexAuth.GetAuthorizationCookie(Response.Cookies, code, Repository);
 
-            FormsAuthentication.SetAuthCookie(userCookie.Value, true);
-            Response.Cookies.Set(userCookie);
-
+            FormsAuthentication.SetAuthCookie(accessToken, true);
+            
             return RedirectToActionPermanent("Index", "Home");
         }
 

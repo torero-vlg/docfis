@@ -1,0 +1,16 @@
+﻿@model IEnumerable<T034.ViewModel.RoleViewModel>
+
+@{
+    ViewBag.Title = "Роли";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Html.ActionLink("Добавить", "AddOrEdit", "Role")
+@{
+    foreach (var news in Model)
+    {
+        <p>@news.Id.ToString()</p>
+        <p>@news.Name</p>
+        <p>@news.Code</p>
+        <p>@Html.ActionLink("Редактировать", "AddOrEdit", new { id = news.Id })</p>
+    }
+}

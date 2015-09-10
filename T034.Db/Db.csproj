@@ -71,8 +71,8 @@
     <Compile Include="Entity\Vgiik\Department.cs" />
     <Compile Include="Entity\Vgiik\Person.cs" />
     <Compile Include="Entity\Vgiik\Publication.cs" />
-    <Compile Include="Mapping\Administration\RoleMap.cs" />
     <Compile Include="Mapping\Administration\UserMap.cs" />
+    <Compile Include="Mapping\Administration\RoleMap.cs" />
     <Compile Include="Mapping\NewsMap.cs" />
     <Compile Include="Mapping\NodeMap.cs" />
     <Compile Include="Mapping\PageMap.cs" />

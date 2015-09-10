@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
 using Db.Entity;
+using T034.Tools.Attribute;
 using T034.ViewModel;
 using T034.ViewModel.Common;
 
@@ -26,6 +27,7 @@ namespace T034.Controllers
         }
 
         [ValidateInput(false)]
+        [Role("Администратор")]
         public ActionResult AddOrEdit(PageViewModel model)
         {
             var item = new Page();
@@ -84,4 +86,6 @@ namespace T034.Controllers
         }
 
     }
+
+   
 }

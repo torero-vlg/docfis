@@ -68,8 +68,6 @@ namespace T034.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<IAuthentication>().To<CustomAuthentication>().InRequestScope();
-
             kernel.Bind<IBaseDb>().ToMethod(c => new NhDbFactory(ConnectionString).CreateBaseDb());
             kernel.Bind<IRepository>().To<Repository.Repository>().InRequestScope();
         }

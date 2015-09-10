@@ -11,6 +11,8 @@ namespace T034.ViewModel.AutoMapper
             {
                 cfg.AddProfile(new DepartmentProfile(server));
                 cfg.AddProfile(new PageProfile());
+                cfg.AddProfile(new UserProfile());
+                cfg.AddProfile(new RoleProfile());
             });
         }
     }

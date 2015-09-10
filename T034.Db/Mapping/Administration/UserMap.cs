@@ -3,14 +3,22 @@ using FluentNHibernate.Mapping;
 
 namespace Db.Mapping.Administration
 {
-    public class RoleMap : ClassMap<Role>
+    public class UserMap : ClassMap<User>
     {
-        public RoleMap()
+        public UserMap()
         {
-            Id(x => x.Id).Column("RoleId").GeneratedBy.Increment();
+            Id(x => x.Id).Column("UserId").GeneratedBy.Increment();
 
             Map(p => p.Name);
-            Map(p => p.Code);
+            Map(p => p.Email);
+            Map(p => p.Login);
+            Map(p => p.Password);
+
+            HasManyToMany(p => p.UserRoles)
+                .Table("UserRole")
+                .ParentKeyColumn("UserId")
+                .ChildKeyColumn("RoleId")
+                .Not.LazyLoad();
         }
     }
 }

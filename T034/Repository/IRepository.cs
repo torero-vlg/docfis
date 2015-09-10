@@ -1,4 +1,5 @@
-﻿using Db.Entity.Administration;
+﻿using System.Collections.Generic;
+using Db.Entity.Administration;
 
 namespace T034.Repository
 {

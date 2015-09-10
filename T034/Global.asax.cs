@@ -1,8 +1,11 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Db;
-using Db.DataAccess;
+using T034.Models;
+using T034.Tools.Attribute;
 using T034.ViewModel.AutoMapper;
 
 namespace T034
@@ -15,6 +18,7 @@ namespace T034
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new PermissionFilterAttribute());
         }
 
         public static void RegisterRoutes(RouteCollection routes)
@@ -37,6 +41,24 @@ namespace T034
             RegisterRoutes(RouteTable.Routes);
 
             AutoMapperWebConfiguration.Configure(Server);
+
+
+        }
+
+        public static IEnumerable<ActionRole> ActionRoles
+        {
+            get
+            {
+                
+                var types = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.Name == "RoleAttribute");
+
+                var list = new List<ActionRole>
+                    {
+                        new ActionRole {Action = "AddOrEdit", Controller = "Page", Role = "Администратор"},
+                        new ActionRole {Action = "AddOrEdit", Controller = "Department", Role = "Администратор"}
+                    };
+                return list;
+            }
         }
     }
 }

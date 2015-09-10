@@ -31,12 +31,12 @@ namespace T034.ViewModel.AutoMapper
                 .ForMember(dest => dest.Albums, opt => opt.MapFrom(src => StringToCollection<Album>(src.AlbumsIds)));
         }
 
-        private static List<T> StringToCollection<T>(string ids) where T : Entity, new()
+        public static List<T> StringToCollection<T>(string ids) where T : Entity, new()
         {
             return string.IsNullOrEmpty(ids) ? null : new List<T>(ids.Split(new string[] { "," }, StringSplitOptions.None).Select(n => new T { Id = Convert.ToInt32(n) }));
         }
 
-        private static string IdsToString<T>(ICollection<T> collection) where T : Entity
+        public static string IdsToString<T>(ICollection<T> collection) where T : Entity
         {
             return collection == null || !collection.Any() ? "" : collection.Select(n => n.Id.ToString()).Aggregate((i, j) => i.ToString() + "," + j.ToString());
         }
