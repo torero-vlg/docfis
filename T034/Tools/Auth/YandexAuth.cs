@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using Db.DataAccess;
+using Db.Entity.Administration;
 using Ninject;
 using T034.Models;
 using T034.Repository;
@@ -18,7 +19,7 @@ namespace T034.Tools.Auth
 
 
 
-        public static string GetAuthorizationCookie(HttpCookieCollection cookies, string code, IRepository repository)
+        public static string GetAuthorizationCookie(HttpCookieCollection cookies, string code, IBaseDb db)
         {
             //var code = request.QueryString["code"];
 
@@ -35,9 +36,9 @@ namespace T034.Tools.Auth
 
 
             stream = HttpTools.PostStream(InfoUrl, string.Format("oauth_token={0}", userCookie.Value));
-            var email = SerializeTools.Deserialize<UserModel>(stream).Name;
+            var email = SerializeTools.Deserialize<UserModel>(stream).default_email;
 
-            var user = repository.GetUser(email);
+            var user = db.SingleOrDefault<User>(u => u.Email == email);
 
             cookies.Set(userCookie);
             cookies.Add(new HttpCookie("roles", string.Join(",", user.UserRoles.Select(r => r.Name))));
