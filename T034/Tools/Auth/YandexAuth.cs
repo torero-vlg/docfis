@@ -41,7 +41,10 @@ namespace T034.Tools.Auth
             var user = db.SingleOrDefault<User>(u => u.Email == email);
 
             cookies.Set(userCookie);
-            cookies.Add(new HttpCookie("roles", string.Join(",", user.UserRoles.Select(r => r.Name))));
+            
+            var rolesCookie = new HttpCookie("roles") {Value = string.Join(",", user.UserRoles.Select(r => r.Name)), Expires = DateTime.Now.AddDays(30)};
+            cookies.Set(rolesCookie);
+            
             return model.access_token;
 
         }

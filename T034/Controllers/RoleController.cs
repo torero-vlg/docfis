@@ -41,6 +41,7 @@ namespace T034.Controllers
         }
 
        // [Authorize]
+        [Tools.Attribute.Role("Администратор")]
         public ActionResult AddOrEdit(RoleViewModel model)
         {
             var item = new Role();

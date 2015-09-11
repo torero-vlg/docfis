@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using T034.Controllers;
 
 namespace T034.Tools.Attribute
 {
@@ -18,11 +14,11 @@ namespace T034.Tools.Attribute
             if (role == null) return;
 
             //if (filterContext.RequestContext.HttpContext.User.HasPermission(role.role)) return;
-            var rolesCookie = filterContext.RequestContext.HttpContext.Response.Cookies["roles"];
+            var rolesCookie = filterContext.RequestContext.HttpContext.Request.Cookies["roles"];
             if (rolesCookie != null && rolesCookie.Value != null && rolesCookie.Value.Contains(role.Role))
                 return;
             
-            filterContext.Result = new Http403Result();
+            filterContext.Result = new RedirectResult("~/Errors/Unauthorized");
 
         }
     }

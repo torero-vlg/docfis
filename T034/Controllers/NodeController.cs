@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using AutoMapper;
 using Db.Entity;
 using Db.Entity.Directory;
+using T034.Tools.Attribute;
 using T034.ViewModel.Common;
 
 namespace T034.Controllers
@@ -21,7 +22,6 @@ namespace T034.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public ActionResult AddOrEdit(int? id)
         {
             var model = new NodeViewModel();
@@ -41,7 +41,7 @@ namespace T034.Controllers
             return View(model);
         }
 
-        [Authorize]
+        [Role("Администратор")]
         public ActionResult AddOrEdit(NodeViewModel model)
         {
             var item = new Node();

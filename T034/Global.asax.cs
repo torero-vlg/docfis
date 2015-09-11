@@ -15,6 +15,8 @@ namespace T034
 
     public class MvcApplication : System.Web.HttpApplication
     {
+        public static IEnumerable<ActionRole> ActionRoles { get; private set; }
+
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
@@ -42,25 +44,26 @@ namespace T034
 
             AutoMapperWebConfiguration.Configure(Server);
 
-
+            ActionRoles = GetActionRoles();
         }
 
-        public static IEnumerable<ActionRole> ActionRoles
+        private IEnumerable<ActionRole> GetActionRoles()
         {
-            get
-            {
-                
-                var types = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.Name == "RoleAttribute");
+            var _assembly = Assembly.GetExecutingAssembly();
 
-                var list = new List<ActionRole>
-                    {
-                        new ActionRole {Action = "AddOrEdit", Controller = "Page", Role = "Администратор"},
-                        new ActionRole {Action = "AddOrEdit", Controller = "Department", Role = "Администратор"},
-                        new ActionRole {Action = "AddOrEdit", Controller = "User", Role = "Администратор"},
-                        new ActionRole {Action = "AddOrEdit", Controller = "Role", Role = "Администратор"}
-                    };
-                return list;
-            }
+            IEnumerable<MethodInfo> methods = _assembly.GetTypes().
+                            SelectMany(t => t.GetMethods())
+                            .Where(m => m.GetCustomAttributes(typeof(RoleAttribute), true).Length > 0);
+
+            var result = methods.Select(m => new ActionRole()
+            {
+                Action = m.Name,
+                Role = ((RoleAttribute)m.GetCustomAttributes(typeof(RoleAttribute), true).FirstOrDefault()).Role,
+                Controller = m.GetBaseDefinition().ReflectedType.Name.Replace("Controller", "")
+            }).ToList();
+
+            return result;
         }
+
     }
 }

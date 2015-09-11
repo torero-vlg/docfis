@@ -40,7 +40,7 @@ namespace T034.Controllers
             return View(model);
         }
 
-      //  [Authorize]
+        [Tools.Attribute.Role("Администратор")]
         public ActionResult AddOrEdit(UserViewModel model)
         {
             var item = new User();

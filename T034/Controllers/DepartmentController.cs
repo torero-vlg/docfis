@@ -7,6 +7,7 @@ using AutoMapper;
 using Db.DataAccess;
 using Db.Entity;
 using Db.Entity.Vgiik;
+using T034.Tools.Attribute;
 using T034.ViewModel;
 
 namespace T034.Controllers
@@ -31,7 +32,7 @@ namespace T034.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [Role("Администратор")]
         public ActionResult AddOrEdit(int? id)
         {
             var model = new DepartmentViewModel();
@@ -44,7 +45,7 @@ namespace T034.Controllers
             return View(model);
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Role("Администратор")]
         public ActionResult AddOrEdit(DepartmentViewModel model)
         {
             var item = new Department();
