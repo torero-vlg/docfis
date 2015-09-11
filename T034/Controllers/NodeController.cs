@@ -41,7 +41,7 @@ namespace T034.Controllers
             return View(model);
         }
 
-        [Role("Администратор")]
+        [Role("Administrator")]
         public ActionResult AddOrEdit(NodeViewModel model)
         {
             var item = new Node();

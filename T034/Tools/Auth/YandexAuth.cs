@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Security;
 using Db.DataAccess;
@@ -42,7 +43,7 @@ namespace T034.Tools.Auth
 
             cookies.Set(userCookie);
             
-            var rolesCookie = new HttpCookie("roles") {Value = string.Join(",", user.UserRoles.Select(r => r.Name)), Expires = DateTime.Now.AddDays(30)};
+            var rolesCookie = new HttpCookie("roles") {Value = string.Join(",", user.UserRoles.Select(r => r.Code)), Expires = DateTime.Now.AddDays(30)};
             cookies.Set(rolesCookie);
             
             return model.access_token;

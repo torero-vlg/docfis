@@ -27,7 +27,7 @@ namespace T034.Controllers
         }
 
         [ValidateInput(false)]
-        [Role("Администратор")]
+        [Role("Administrator")]
         public ActionResult AddOrEdit(PageViewModel model)
         {
             var item = new Page();

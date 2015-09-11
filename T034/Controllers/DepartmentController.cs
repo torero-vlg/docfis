@@ -32,7 +32,6 @@ namespace T034.Controllers
         }
 
         [HttpGet]
-        [Role("Администратор")]
         public ActionResult AddOrEdit(int? id)
         {
             var model = new DepartmentViewModel();
@@ -45,7 +44,7 @@ namespace T034.Controllers
             return View(model);
         }
 
-        [Role("Администратор")]
+        [Role("Administrator")]
         public ActionResult AddOrEdit(DepartmentViewModel model)
         {
             var item = new Department();
