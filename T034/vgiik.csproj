@@ -218,14 +218,15 @@
     <Content Include="Content\jQuery.FileUpload\img\progressbar.gif" />
     <Content Include="Content\pic\banner.png" />
     <Content Include="Content\pic\bl.png" />
+    <Content Include="Content\pic\bm.png" />
     <Content Include="Content\pic\cl.png" />
     <Content Include="Content\pic\cvl.png" />
+    <Content Include="Content\pic\main.jpg" />
     <Content Include="Content\pic\menu1.png" />
     <Content Include="Content\pic\menu2.png" />
     <Content Include="Content\pic\menu3.png" />
     <Content Include="Content\pic\menu4.png" />
     <Content Include="Content\pic\menu5.png" />
-    <Content Include="Content\pic\menu6.png" />
     <Content Include="Content\pic\wl.png" />
     <Content Include="Content\pic\wyl.png" />
     <Content Include="Content\pic\yandex_icon.png" />
@@ -292,6 +293,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\angular\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\ckeditor\adapters\jquery.js" />

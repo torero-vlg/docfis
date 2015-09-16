@@ -1,7 +1,7 @@
 ﻿@using T034.Models
 @using T034.Tools.Auth
 <!DOCTYPE html>
-<html>
+<html ng-app="appname">
 <head>
     <title>@ViewBag.Title</title>
     <meta content="" name="description">
@@ -16,7 +16,15 @@
     <script src="@Url.Content("~/Scripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery-ui-1.9.0.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/angular/angular.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/DataTables-1.10.2/media/js/jquery.dataTables.min.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        var appname = angular.module('appname', []);
+        appname.controller('appCtrl', ['$scope',
+          function ($scope) {
+              $scope.greeting = { text: 'Hello' };
+          } ]);
+    </script>
 </head>
 
     <body>
@@ -37,19 +45,22 @@
                         @Html.Partial("MainMenu")
                         <!--End MainMenu-->
 			
-                        <div><img src="@Url.Content("~/Content/pic/wyl.png")" alt="" height="8px" width="800px"></div>
-                        <div class="text">
-                            <!--Begin Body-->
-                            @RenderBody()
-                            <!--End Body-->
-                        </div>
-                        <div class="bottommenu"> Новости :: Цели и задачи :: Услуги и цены :: Фотогалерея :: О нас :: Контакты</div>
+                        @*<div class="text">*@
+                        <!--Begin Body-->
+                        @RenderBody()
+                        <!--End Body-->
+                        @*</div>*@
+                        <div class="bottommenu"><a href="" class="bottommenu"> Новости :: Цели и задачи :: Услуги и цены :: Фотогалерея :: О нас :: Контакты</a></div>
                     </div>
                 </td>
                 <td width="2" BACKGROUND="@Url.Content("~/Content/pic/cvl.png")"><img src="@Url.Content("~/Content/pic/cvl.png")" width="2px"></td>
                 <td></td>
             </tr>
-            <tr><td colspan=3 align="right" height="25"><a href="" class="bmenu">2015 &copy; "Детский оздоровительный центр физической культуры и спорта"</a></td></tr>
+            <tr><td height="3" BACKGROUND="@Url.Content("~/Content/pic/cvl.png")"></td>
+<td height="3" BACKGROUND="@Url.Content("~/Content/pic/cvl.png")" width="800px"></td>
+<td height="3" BACKGROUND="@Url.Content("~/Content/pic/cvl.png")"></td></tr>
+            <tr><td colspan=3 align="right" height="25"><a href="" class="bmenu">2015 &copy; "Детский оздоровительный центр физической культуры и спорта"</a><td></tr>
+
             </table>
 		
     </body>

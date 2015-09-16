@@ -11,7 +11,7 @@ namespace T034.Controllers
         public ActionResult Index()
         {
 
-            return RedirectToAction("Index", "Page", new {id = 1});
+            return View();
         }
 
 

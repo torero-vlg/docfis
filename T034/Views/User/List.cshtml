@@ -4,6 +4,9 @@
     ViewBag.Title = "Пользователи";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
+
 @Html.ActionLink("Добавить", "AddOrEdit", "User")
 @{
     foreach (var news in Model)
@@ -14,3 +17,8 @@
         <p>@Html.ActionLink("Редактировать", "AddOrEdit", new { id = news.Id })</p>
     }
 }
+
+<div ng-controller="appCtrl">
+    <input ng-model="greeting.text"/>
+    <p>{{greeting.text}}, world </p>
+</div>
