@@ -2,7 +2,32 @@
     ViewBag.Title = "О нас";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<script type="text/javascript">
+    $(function () {
+        jQuery('a[rel*=lightbox_s]').lightBox();
+    });
+</script>
 <div class="content">
-    
+    @{
+        var path = "/Upload/Images/about";
+        var directory = new DirectoryInfo(Server.MapPath(path));
+
+        var files = directory.GetFiles();
+
+        foreach (var file in files)
+        {
+
+            <div class="row">
+                <div class="col-xs-6 col-md-2">
+                </div>
+                <div class="col-xs-6 col-md-8">
+                    <a rel="lightbox_s" href="@path/@file.Name" class="thumbnail">
+                        <img src="@path/@file.Name" alt="">
+                    </a>
+                </div>
+                <div class="col-xs-6 col-md-2">
+                </div>
+            </div>
+        }
+    }
 </div>
