@@ -15,7 +15,7 @@ body
 
 .main
 {
-    height: 800px;
+    /*height: 800px;*/
     width: 800px;
     padding: 0 0 0 0;
     text-align: center;
@@ -37,6 +37,12 @@ body
     text-align: justify;
     padding: 20px 80px 20px 80px;
     text-indent: 30px;
+}
+
+.content
+{
+    background-color: #ffffff;
+    padding: 20px 20px 20px 20px;
 }
 
 .maintext

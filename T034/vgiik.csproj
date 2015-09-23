@@ -210,17 +210,24 @@
     <Content Include="Content\DataTables-1.10.2\media\images\sort_both.png" />
     <Content Include="Content\DataTables-1.10.2\media\images\sort_desc.png" />
     <Content Include="Content\DataTables-1.10.2\media\images\sort_desc_disabled.png" />
+    <Content Include="Content\jcarousel\jcarousel.responsive.css" />
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-noscript.css" />
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-ui-noscript.css" />
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload-ui.css" />
     <Content Include="Content\jQuery.FileUpload\css\jquery.fileupload.css" />
     <Content Include="Content\jQuery.FileUpload\img\loading.gif" />
     <Content Include="Content\jQuery.FileUpload\img\progressbar.gif" />
+    <Content Include="Content\jquery.lightbox-0.5.css" />
     <Content Include="Content\pic\banner.png" />
     <Content Include="Content\pic\bl.png" />
     <Content Include="Content\pic\bm.png" />
     <Content Include="Content\pic\cl.png" />
     <Content Include="Content\pic\cvl.png" />
+    <Content Include="Content\pic\lightbox\close_grey.png" />
+    <Content Include="Content\pic\lightbox\lightbox-blank.gif" />
+    <Content Include="Content\pic\lightbox\lightbox-ico-loading.gif" />
+    <Content Include="Content\pic\lightbox\nextlabel.gif" />
+    <Content Include="Content\pic\lightbox\prevlabel.gif" />
     <Content Include="Content\pic\main.jpg" />
     <Content Include="Content\pic\menu1.png" />
     <Content Include="Content\pic\menu2.png" />
@@ -230,7 +237,9 @@
     <Content Include="Content\pic\wl.png" />
     <Content Include="Content\pic\wyl.png" />
     <Content Include="Content\pic\yandex_icon.png" />
+    <Content Include="Content\simpleGal.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\t034\t034.gallery.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -671,11 +680,14 @@
     <Content Include="Scripts\DataTables-1.10.2\media\js\jquery.dataTables.js" />
     <Content Include="Scripts\DataTables-1.10.2\media\js\jquery.dataTables.min.js" />
     <Content Include="Scripts\DataTables-1.10.2\media\js\jquery.js" />
+    <Content Include="Scripts\jcarousel\jcarousel.responsive.js" />
+    <Content Include="Scripts\jcarousel\jquery.jcarousel.min.js" />
     <Content Include="Scripts\jquery-1.9.0-vsdoc.js" />
     <Content Include="Scripts\jquery-1.9.0.js" />
     <Content Include="Scripts\jquery-1.9.0.min.js" />
     <Content Include="Scripts\jquery-ui-1.9.0.js" />
     <Content Include="Scripts\jquery-ui-1.9.0.min.js" />
+    <Content Include="Scripts\jquery.ad-gallery.js" />
     <Content Include="Scripts\jQuery.FileUpload\cors\jquery.postmessage-transport.js" />
     <Content Include="Scripts\jQuery.FileUpload\cors\jquery.xdr-transport.js" />
     <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-audio.js" />
@@ -687,11 +699,15 @@
     <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload-video.js" />
     <Content Include="Scripts\jQuery.FileUpload\jquery.fileupload.js" />
     <Content Include="Scripts\jQuery.FileUpload\jquery.iframe-transport.js" />
+    <Content Include="Scripts\jquery.lightbox-0.5.js" />
+    <Content Include="Scripts\jquery.simpleGal.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\lang\ru.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\t034\t034.gallery.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -778,6 +794,12 @@
     <Content Include="Views\User\AddOrEdit.cshtml" />
     <Content Include="Views\Role\AddOrEdit.cshtml" />
     <Content Include="Views\Role\List.cshtml" />
+    <Content Include="Views\Page\StaticPage100.cshtml" />
+    <Content Include="Views\Shared\BottomMenu.cshtml" />
+    <Content Include="Views\Page\StaticPage200.cshtml" />
+    <Content Include="Views\Page\StaticPage300.cshtml" />
+    <Content Include="Views\Page\StaticPage500.cshtml" />
+    <Content Include="Views\Page\StaticPage400.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">

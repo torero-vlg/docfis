@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
 using Db.Entity;
 using T034.Tools.Attribute;
 using T034.ViewModel;
-using T034.ViewModel.Common;
 
 namespace T034.Controllers
 {
@@ -59,6 +56,8 @@ namespace T034.Controllers
 
         public ActionResult Index(int id)
         {
+            if (id > 99)
+                return View("StaticPage" + id);
             var model = new PageViewModel();
 
             var item = Db.Get<Page>(id);

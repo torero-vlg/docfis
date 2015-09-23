@@ -1,0 +1,8 @@
+﻿ul {
+    list-style: none;
+    margin-bottom: 1.5em;
+}
+.thumbnails li {
+    display: inline;
+    margin: 0 10px 0 0;
+}

@@ -1,0 +1,12 @@
+﻿.gallery li {
+    display: inline;
+}
+.gallery li img{
+    cursor: pointer !important;
+	margin: 10px;
+}
+
+.modal-dialog
+{
+    width: 70%;
+}
