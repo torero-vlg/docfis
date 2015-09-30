@@ -800,6 +800,7 @@
     <Content Include="Views\Page\StaticPage300.cshtml" />
     <Content Include="Views\Page\StaticPage500.cshtml" />
     <Content Include="Views\Page\StaticPage400.cshtml" />
+    <Content Include="Views\Shared\Contacts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\T034.Db\Db.csproj">

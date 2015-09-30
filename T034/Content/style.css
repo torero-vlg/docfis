@@ -233,3 +233,6 @@ textarea
 {
     display: none;
 }
+.modal-dialog.contacts {
+    width: 650px !important;
+}
